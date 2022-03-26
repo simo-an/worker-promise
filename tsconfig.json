@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "outDir": "lib",
+    "strict": false,
+    "lib": [
+      "ES2015.Promise",
+      "ESNext",
+      "DOM"
+    ],
+  },
+  "include": [
+    "index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

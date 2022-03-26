@@ -1,0 +1,33 @@
+{
+  "name": "worker-promise",
+  "version": "1.0.0",
+  "description": "A better method to use the worker thread of javascript.",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc ./test/index.ts",
+    "debug": "tsc -p tsconfig.json --watch"
+  },
+  "devDependencies": {
+    "typescript": "4.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simo-an/worker-promise.git"
+  },
+  "keywords": [
+    "worker",
+    "thread",
+    "promise",
+    "typescript"
+  ],
+  "author": "simu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simo-an/worker-promise/issues"
+  },
+  "homepage": "https://github.com/simo-an/worker-promise#readme"
+}
