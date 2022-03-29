@@ -1,4 +1,4 @@
-export class WorkerPromise {
+class WorkerPromise {
   private static worker: Worker
   private param = undefined
   private refs: Array<{ name: string, fn: string }> = []
@@ -61,3 +61,5 @@ export class WorkerPromise {
     WorkerPromise.worker = new Worker(workerUrl);
   }
 }
+
+export default WorkerPromise

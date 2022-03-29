@@ -17,9 +17,9 @@ npm i worker-promise
 
 #### Example Code 1 (Without parameters)
 ```typescript
-import PromiseWorker from "worker-promise"
+import WorkerPromise from "worker-promise"
 
-const worker = new PromiseWorker()
+const worker = new WorkerPromise()
 
 worker.then(() => {
   console.warn('I am running in worker thread!')
@@ -52,9 +52,9 @@ console.warn(result)
 You can use `prepare()` to set parameter(not support multily, or you can pack then into one object) before `then()`
 
 ```typescript
-import PromiseWorker from "worker-promise"
+import WorkerPromise from "worker-promise"
 
-const worker = new PromiseWorker()
+const worker = new WorkerPromise()
 
 worker.provide({name: 'SIMU', age: 18}).then((param) => {
   console.warn('I am running in worker thread!')
@@ -70,7 +70,7 @@ worker.provide({name: 'SIMU', age: 18}).then((param) => {
 Also, you can can attach parameter after callback
 
 ```typescript
-const worker = new PromiseWorker()
+const worker = new WorkerPromise()
 
 const callback = (param) => {
   console.warn('I am running in worker thread!')
@@ -87,7 +87,10 @@ worker.then(callback, {name: 'SIMU', age: 18}).then(result => {
 #### Example Code 3 (With imported function)
 
 ```typescript
+import WorkerPromise from "worker-promise"
 import { getName, getAge } from './user';
+
+const worker = new WorkerPromise()
 
 worker
   .provide([getName, getAge])
