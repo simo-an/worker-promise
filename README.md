@@ -56,7 +56,7 @@ import PromiseWorker from "worker-promise"
 
 const worker = new PromiseWorker()
 
-worker.prepare({name: 'SIMU', age: 18}).then((param) => {
+worker.provide({name: 'SIMU', age: 18}).then((param) => {
   console.warn('I am running in worker thread!')
   console.warn(`I know you are ${param.name}, and ${param.age} years old!`)
 
@@ -83,6 +83,22 @@ worker.then(callback, {name: 'SIMU', age: 18}).then(result => {
   console.warn(result)
 })
 ```
+
+#### Example Code 3 (With imported function)
+
+```typescript
+import { getName, getAge } from './user';
+
+worker
+  .provide([getName, getAge])
+  .then(() => {
+    return `Name: ${getName()}, Age: ${getAge()}`;
+  }).then(result => {
+    console.warn(result)
+  })
+```
+
+Note: You must provide the function you used
 
 
 ### Feautue
